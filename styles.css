@@ -1,0 +1,140 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 10vh;
+}
+
+.logo {
+  width: 10vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  max-height: 90vw;
+  max-width: 90vw;
+}
+
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+  width: 90%;
+  height: 90%;
+  border-radius: 20px;
+  border-color: black;
+  border-width: 20px;
+  border-style: double;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+  background-color: transparent;
+}
+
+.text-container {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  font-size: 18px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Updated Buttons */
+button {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 10rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+  height: 100%;
+  width: 20%;
+  min-width: 10rem;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Positioning buttons on top of the image */
+#prevBtn {
+  left: 0px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  display: none;
+}
+
+#nextBtn {
+  right: 0px;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  display: none;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  #prevBtn,
+  #nextBtn {
+    display: inline-block;
+  }
+}
+
+
+
